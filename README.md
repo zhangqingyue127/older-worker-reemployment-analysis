@@ -1,158 +1,206 @@
 # Analysis of Factors Affecting Re-employment of Elderly Workers Based on Text Mining
 
-This repository presents an academic reconstruction of a Labor Economics course project completed at Southwestern University of Finance and Economics in the 2024–2025 Spring semester. The study investigates the main factors affecting the re-employment of elderly workers in China under the broader context of population ageing and delayed retirement reform.
-
 ## Abstract
+This repository presents a course-based research project in labor economics that examines the key factors affecting the re-employment of elderly workers in the context of delayed retirement reform in China. The study combines Chinese policy texts and social media discourse with a hybrid **LDA–DEMATEL–ISM** framework to identify latent themes, quantify inter-factor relationships, and reveal the hierarchical structure of the re-employment mechanism. Based on the empirical analysis, the study identifies **10 influencing factors** across four dimensions: **individual**, **technological**, **social**, and **institutional/policy**. The findings suggest that **skill adaptability** functions as the most direct surface-level determinant, while **age discrimination in the workplace** and **group norm effects** act as deeper structural constraints.
 
-This project identifies and analyzes the key factors influencing the re-employment of elderly workers through a text-mining and structural-analysis framework. Using policy documents together with public opinion texts collected from social media platforms, the study first applies Latent Dirichlet Allocation (LDA) to extract latent themes related to elderly labor re-employment. It then integrates DEMATEL and ISM to examine inter-factor influence intensity, causal structure, and hierarchical relationships. The final results indicate that the issue is shaped by four dimensions—individual, technological, social, and policy-institutional—with ten specific factors. Among them, skill adaptability functions as the most direct surface-level factor, while workplace age discrimination and group norm effects act as deeper structural constraints.
+**Keywords:** elderly workers; re-employment; text mining; LDA; DEMATEL; ISM; delayed retirement
+
+---
 
 ## Research Background
+Population aging has become an increasingly prominent structural issue in China. Against this backdrop, delayed retirement reform has gradually moved from policy discussion to institutional implementation. While extending working life may help alleviate labor supply pressure and pension burdens, it also raises a set of labor-market questions concerning re-employment opportunities, intergenerational competition, skill mismatch, health constraints, and social prejudice.
 
-As population ageing intensifies in China, delayed retirement has gradually become an important policy issue. At the same time, whether elderly workers are willing and able to re-enter the labor market depends not only on health or income, but also on social norms, technological change, and institutional support. This project therefore focuses on one central question:
+This project focuses on the following research question:
 
-**What are the core factors affecting the re-employment of elderly workers, and how are these factors structurally related to one another?**
+> **What are the key factors affecting the re-employment of elderly workers, and how are these factors structurally related to one another?**
+
+Rather than relying solely on expert scoring, this study uses text mining to extract factor signals from a large corpus of public discussion and policy documents, and then models the interaction and hierarchy among those factors.
+
+---
 
 ## Data Sources
+The corpus was constructed from both **policy-oriented texts** and **public opinion texts**, in order to capture institutional discourse as well as social responses.
 
-The corpus was constructed from both official and public-discourse texts:
+### Policy texts
+- Government policy documents
+- Official explanatory articles related to delayed retirement and elderly employment
 
-- policy-related documents on delayed retirement and elderly labor employment
-- Weibo comments on related topics
-- Bilibili danmaku texts and public discussion content
+### Social media texts
+- Weibo comments
+- Bilibili danmu/comments
 
-According to the course paper, the data were collected between **2024-09-10 and 2025-06-01**, yielding a corpus of **155,865 Chinese characters** after aggregation. Text preprocessing included segmentation with `jieba`, stopword removal, duplicate removal, and corpus consolidation.
+### Collection window
+- **2024-09-10 to 2025-06-01**
+
+### Corpus size
+- **155,865 Chinese characters** after collection and integration
+
+The use of multi-source textual data allows the project to capture both macro-level policy framing and micro-level public attitudes toward elderly labor-force re-entry.
+
+---
 
 ## Methodological Framework
+This project adopts an integrated **LDA–DEMATEL–ISM** framework.
 
-The project adopts an **LDA–DEMATEL–ISM** integrated framework.
+### 1. Text preprocessing
+The raw corpus was cleaned through a standard Chinese text processing pipeline, including:
+- text aggregation
+- deduplication
+- stopword removal
+- punctuation filtering
+- Chinese word segmentation using `jieba`
 
-### 1. Topic extraction with LDA
+### 2. LDA topic modeling
+Latent Dirichlet Allocation (LDA) was used to identify latent themes in the corpus. Perplexity was used to determine the optimal number of topics, and the final model retained **10 topics**.
 
-LDA was used to identify latent themes from the combined corpus. Topic-number selection was based on perplexity comparison, and the final model retained **10 topics**.
+These topics were then interpreted and consolidated into **10 influencing factors** under four dimensions:
 
-### 2. Semantic influence matrix construction
-
-To avoid the subjectivity of expert scoring, the project constructed an influence matrix from text data using:
-
-- TF-IDF for keyword weighting
-- Word2Vec for semantic representation
-- cosine similarity for inter-factor association measurement
-- a Top-3 averaging strategy and nonlinear transformation to strengthen interpretability
-
-### 3. Structural relationship analysis
-
-The semantic association matrix was then introduced into a DEMATEL-style analysis to compute:
-
-- influence degree
-- affected degree
-- centrality
-- causality
-
-Finally, ISM was applied to derive the hierarchical structure of factors. The course paper reports that a threshold of **0.72** produced the most suitable reachability matrix.
-
-## Factor System
-
-The final factor system contains four dimensions and ten factors:
-
-### Individual dimension
+#### Individual dimension
 - Health and physical condition
 - Re-employment willingness
 - Skill adaptability
 
-### Technological dimension
+#### Technological dimension
 - Digital access capability
 - Technology substitution risk
 
-### Social dimension
+#### Social dimension
 - Workplace age discrimination
 - Family responsibility conflict
 - Group norm effect
 
-### Policy-institutional dimension
+#### Institutional and policy dimension
 - Policy support intensity
-- Institutional completeness
+- Institutional support completeness
+
+### 3. DEMATEL based on text-derived semantic similarity
+To reduce the subjectivity of expert scoring, this project uses a data-driven strategy to construct the influence matrix. Specifically:
+- TF-IDF was used to extract representative keywords
+- Word2Vec was used to learn semantic representations
+- cosine similarity was used to estimate inter-factor relatedness
+- a non-linear transformation and Top-3 averaging strategy were applied to improve discrimination and robustness
+
+This process produced a comprehensive influence matrix for subsequent structural analysis.
+
+### 4. ISM hierarchical modeling
+Interpretive Structural Modeling (ISM) was employed to transform the influence matrix into a hierarchical structure. After threshold testing, the final threshold was set at:
+
+- **λ = 0.72**
+
+The resulting reachability matrix was then used to divide the 10 factors into multiple structural layers.
+
+---
 
 ## Main Findings
+The study finds that the re-employment of elderly workers is a **multi-dimensional and hierarchical system** rather than a single-factor issue.
 
-The original paper and presentation support the following conclusions:
+### Surface layer
+- **Skill adaptability** is the most direct determining factor.
+- It acts as the final manifestation of interactions among deeper factors and directly affects job matching quality.
 
-1. **Skill adaptability** is the most important direct factor in the whole system and occupies the surface layer of the hierarchical structure.
-2. **Health and physical condition**, **re-employment willingness**, and **digital access capability** form the shallow-layer preconditions for participation in re-employment.
-3. **Technology substitution risk**, **family responsibility conflict**, **policy support intensity**, and **institutional completeness** act as mid-level transmission factors linking individuals with the external labor-market environment.
-4. **Workplace age discrimination** and **group norm effect** function as deep structural constraints and constitute the bottom layer of the system.
+### Shallow layer
+- **Health and physical condition**
+- **Re-employment willingness**
+- **Digital access capability**
 
-These findings suggest that elderly-worker re-employment is not a single-variable issue, but a multi-level labor-market mechanism shaped jointly by human capital, technology, institutions, and social cognition.
+These factors function as the immediate prerequisites for labor-force re-entry.
 
-## Original Figure from the Project
+### Middle layer
+- **Technology substitution risk**
+- **Family responsibility conflict**
+- **Policy support intensity**
+- **Institutional support completeness**
 
-The README intentionally uses the **original project figure** rather than a regenerated chart.
+These factors connect individual decision-making with the broader labor-market and policy environment.
 
-![Original centrality-causality figure](assets/original_centrality_causality_map.png)
+### Deep layer
+- **Workplace age discrimination**
+- **Group norm effect**
 
-*Figure. Centrality–causality scatter plot used in the original project materials.*
+These are the most fundamental constraint factors. They do not always act directly on job-seeking behavior, but they shape the social environment, perceived legitimacy, and psychological expectations surrounding elderly re-employment.
+
+---
+
+## Key Analytical Figure
+The README uses the **original project figure** rather than a redrawn version.
+
+![Centrality-Causality Scatter Plot Analysis](figures/优化版_因素分析结果_图例左下.png)
+
+*Figure. Centrality–causality scatter plot used in the DEMATEL analysis.*
+
+---
+
+## Academic Contribution
+This project contributes in three ways at the course-research level:
+
+1. **Interdisciplinary integration**  
+   It combines labor economics with natural language processing and structural modeling.
+
+2. **Data-driven factor identification**  
+   It replaces conventional expert-scoring dependence with semantic information extracted from large-scale text data.
+
+3. **Hierarchical mechanism interpretation**  
+   It goes beyond listing factors and instead explains how factors operate at different structural levels.
+
+---
 
 ## Repository Structure
-
 ```text
-older-worker-reemployment-analysis/
+.
 ├── README.md
-├── requirements.txt
-├── config/
-│   ├── factors.json
-│   └── stopwords.txt
 ├── data/
 │   ├── raw/
 │   └── processed/
-├── docs/
-│   ├── course_paper_original.docx
-│   ├── presentation_original.pptx
-│   └── methodology.md
-├── results/
-│   ├── dematel_scores.csv
-│   ├── factor_similarity_matrix.csv
-│   ├── ism_levels_from_reachability.csv
-│   ├── reachability_matrix_threshold_0_72.csv
-│   └── source_overview.csv
-├── src/
-│   ├── analysis/
-│   ├── crawlers/
-│   ├── models/
-│   ├── preprocessing/
-│   └── visualization/
-└── assets/
-    └── original_centrality_causality_map.png
+├── crawlers/
+├── preprocessing/
+├── models/
+├── analysis/
+├── visualization/
+├── figures/
+└── docs/
 ```
+
+---
 
 ## Reproducibility
+This repository is organized as a cleaned and portfolio-oriented academic project version. The workflow follows the sequence below:
 
-To reproduce the workflow:
+1. collect policy and social-media texts  
+2. clean and preprocess the corpus  
+3. run LDA topic modeling and interpret topics  
+4. compute the semantic similarity-based influence matrix  
+5. perform DEMATEL centrality/causality analysis  
+6. construct the ISM hierarchy  
+7. interpret the results from a labor economics perspective
 
-```bash
-pip install -r requirements.txt
-```
-
-Then run the scripts by stage:
-
-1. collect or prepare source texts
-2. build the combined corpus
-3. perform topic modeling and topic-number selection
-4. construct the semantic influence matrix
-5. run DEMATEL analysis
-6. run ISM hierarchy analysis
-
-The code in this repository is a **cleaned and modularized academic presentation version** of the course project rather than a direct dump of the original working scripts.
+---
 
 ## Academic Context
-
+- **University:** Southwestern University of Finance and Economics  
 - **Course:** Labor Economics  
-- **Semester:** 2024–2025 Spring  
-- **Institution:** Southwestern University of Finance and Economics  
+- **Semester:** 2024–2025, Semester 2  
+- **Author:** Qingyue Zhang  
 - **Major:** Artificial Intelligence
 
+This project was completed as a final course paper and later reorganized into a GitHub-friendly research portfolio repository.
+
+---
+
+## Notes
+- This repository is intended for **academic presentation and portfolio use**.
+- The project reflects a **course research framework**, not a journal-submission version.
+- Some source texts originate from public online platforms and official documents; users should handle redistribution carefully and comply with the relevant platform or copyright policies.
+
+---
+
 ## Citation
+If you would like to reference this repository, please cite it as a course project or GitHub research portfolio entry rather than as a published article.
 
-If you reference this repository, please cite it as a course project repository and consult the original paper in `docs/course_paper_original.docx` for the full Chinese discussion and references.
-
-## Disclaimer
-
-This repository is intended for academic presentation, portfolio organization, and methodological demonstration. It should not be interpreted as a formal policy evaluation report.
+```bibtex
+@misc{zhang2025elderlyreemployment,
+  author       = {Qingyue Zhang},
+  title        = {Analysis of Factors Affecting Re-employment of Elderly Workers Based on Text Mining},
+  year         = {2025},
+  note         = {Course project repository, Labor Economics, Southwestern University of Finance and Economics}
+}
+```
