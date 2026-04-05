@@ -1,0 +1,11 @@
+code,factor,dispatching_degree,receiving_degree,prominence,relation,factor_type
+S1,Health and physical capacity,6.6,6.61,13.21,-0.01,effect
+S2,Reemployment intention,7.0,6.96,13.96,0.04,cause
+S3,Skill adaptability,6.94,8.5,15.44,-1.56,effect
+S4,Digital access capability,7.22,7.27,14.49,-0.05,effect
+S5,Technology substitution risk,7.24,7.12,14.36,0.12,cause
+S6,Age discrimination,7.27,6.9,14.17,0.37,cause
+S7,Family responsibility conflict,6.92,6.79,13.71,0.13,cause
+S8,Group norm effect,7.09,6.43,13.52,0.66,cause
+S9,Policy support strength,7.47,7.39,14.86,0.08,cause
+S10,Institutional completeness,7.39,7.17,14.56,0.22,cause

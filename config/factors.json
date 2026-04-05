@@ -1,0 +1,151 @@
+[
+  {
+    "code": "S1",
+    "name_en": "Health and physical capacity",
+    "name_zh": "健康体能条件",
+    "keywords": [
+      "健康",
+      "寿命",
+      "疾病",
+      "身体",
+      "失能",
+      "压力",
+      "体力",
+      "状态"
+    ]
+  },
+  {
+    "code": "S2",
+    "name_en": "Reemployment intention",
+    "name_zh": "再就业意愿",
+    "keywords": [
+      "意愿",
+      "态度",
+      "倾向",
+      "主动",
+      "希望",
+      "观念",
+      "价值观"
+    ]
+  },
+  {
+    "code": "S3",
+    "name_en": "Skill adaptability",
+    "name_zh": "技能适应能力",
+    "keywords": [
+      "技能",
+      "培训",
+      "学习",
+      "经验",
+      "岗位适配",
+      "职业技能",
+      "教育",
+      "学习能力"
+    ]
+  },
+  {
+    "code": "S4",
+    "name_en": "Digital access capability",
+    "name_zh": "数字获取能力",
+    "keywords": [
+      "数字",
+      "互联网",
+      "信息",
+      "平台",
+      "智能设备",
+      "数字鸿沟",
+      "线上",
+      "数字素养"
+    ]
+  },
+  {
+    "code": "S5",
+    "name_en": "Technology substitution risk",
+    "name_zh": "技术替代风险",
+    "keywords": [
+      "人工智能",
+      "自动化",
+      "机器人",
+      "科技",
+      "取代",
+      "失业",
+      "算法",
+      "机械化"
+    ]
+  },
+  {
+    "code": "S6",
+    "name_en": "Age discrimination",
+    "name_zh": "职场年龄歧视",
+    "keywords": [
+      "年龄歧视",
+      "歧视",
+      "偏见",
+      "刻板印象",
+      "年龄偏好",
+      "年轻化",
+      "招聘限制"
+    ]
+  },
+  {
+    "code": "S7",
+    "name_en": "Family responsibility conflict",
+    "name_zh": "家庭职责冲突",
+    "keywords": [
+      "家庭",
+      "照顾",
+      "责任",
+      "孩子",
+      "赡养",
+      "家庭负担",
+      "照料",
+      "家务"
+    ]
+  },
+  {
+    "code": "S8",
+    "name_en": "Group norm effect",
+    "name_zh": "群体规范效应",
+    "keywords": [
+      "社会观念",
+      "舆论",
+      "主流观点",
+      "群体规范",
+      "社交圈",
+      "文化期望",
+      "社会风气",
+      "主流价值"
+    ]
+  },
+  {
+    "code": "S9",
+    "name_en": "Policy support strength",
+    "name_zh": "政策扶持力度",
+    "keywords": [
+      "政策",
+      "鼓励",
+      "引导",
+      "支持",
+      "补贴",
+      "财政支持",
+      "政府",
+      "养老保险",
+      "人力资源"
+    ]
+  },
+  {
+    "code": "S10",
+    "name_en": "Institutional completeness",
+    "name_zh": "制度配套完善度",
+    "keywords": [
+      "制度",
+      "法律",
+      "法规",
+      "标准",
+      "流程",
+      "机制",
+      "服务体系",
+      "配套政策"
+    ]
+  }
+]

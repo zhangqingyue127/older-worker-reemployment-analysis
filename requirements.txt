@@ -1,0 +1,10 @@
+numpy
+pandas
+matplotlib
+requests
+lxml
+openpyxl
+scikit-learn
+gensim
+jieba
+pyLDAvis
